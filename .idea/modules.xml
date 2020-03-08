@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DSAStack.iml" filepath="$PROJECT_DIR$/DSAStack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StackDsa.iml" filepath="$PROJECT_DIR$/StackDsa.iml" />
     </modules>
   </component>
 </project>
