@@ -1,20 +1,21 @@
 package com.dsa.pila;
 
-public interface PilaInter {
-
-
+public interface PilaInter<E> {
 
     // Operacao POP
-    boolean pop();
+    E pop() throws EmptyStackException;
 
     // Operacao PUSH
-    boolean push();
+    void push(E e) throws  FullStackException;
 
     // Verifica pilha
     boolean llena();
 
-    //
+    // Mostrar pila
+    void mostra();
 
+    // numelems
+    int size();
 
 
 }
