@@ -1,36 +1,37 @@
 package com.dsa.pila;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 
 public class MiPilaTest {
-    PilaInter<Integer> p;
+    Pila<Integer> p;
 
     @Before
     public void setUp() throws Exception {
 
-        this.p = new MiPila<Integer>(5);
+        this.p = new MiPila<>(5);
+
         p.push(4);
         p.push(6);
         p.push(2);
+
     }
 
     @Test
     public void testPush() throws Exception {
+
         Assert.assertEquals("testPush", 3, p.size());
         p.push(4);
         Assert.assertEquals("testPush", 4, p.size());
         p.push(6);
-
         Assert.assertEquals("testPush", 5, p.size());
-
     }
 
     @Test
     public void testPop() throws Exception {
-        Assert.assertEquals("testPush", 3, p.size());
+        Assert.assertEquals("testPop", 3, p.size());
+
         int i = p.pop();
         Assert.assertEquals("testPush", 2, p.size());
         Assert.assertEquals("testPush", 2, i);
@@ -46,6 +47,9 @@ public class MiPilaTest {
 
     @Test(expected = EmptyStackException.class)
     public void testPopEmpty() throws Exception {
+
+        p.mostra();
+
         Assert.assertEquals("testPush", 3, p.size());
         int i = p.pop();
         Assert.assertEquals("testPush", 2, p.size());
@@ -62,7 +66,6 @@ public class MiPilaTest {
         p.pop();
     }
 
-
     @Test(expected=FullStackException.class)
     public void testPushFull() throws Exception {
         Assert.assertEquals("testPush", 3, p.size());
@@ -74,6 +77,5 @@ public class MiPilaTest {
 
         p.push(999999);
     }
-
 
 }
