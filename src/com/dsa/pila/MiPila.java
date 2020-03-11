@@ -12,7 +12,6 @@ public class MiPila<E> implements Pila<E> {
         this.vec = new Vector<>();
     }
 
-
     // Hace falta poner: @Override ?
     public void push(E e) throws FullStackException {
         if (vec.size()>=this.max){
