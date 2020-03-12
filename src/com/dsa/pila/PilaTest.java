@@ -4,13 +4,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class MiPilaTest {
-    Pila<Integer> p;
+public class PilaTest {
+    IPila<Integer> p;
 
     @Before
     public void setUp() throws Exception {
 
-        this.p = new MiPila<>(5);
+        this.p = new Pila<>(5);
 
         p.push(4);
         p.push(6);

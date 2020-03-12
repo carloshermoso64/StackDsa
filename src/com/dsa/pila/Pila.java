@@ -1,18 +1,40 @@
 package com.dsa.pila;
 
-public interface Pila<E> {
+import java.util.Vector;
 
-    // Operacao POP
-    E pop() throws EmptyStackException;
+public class Pila<E> implements IPila<E> {
+    Vector<E> vec;
 
-    // Operacao PUSH
-    void push(E e) throws FullStackException;
+    int max;
 
-    // Mostrar pila
-    void mostra();
+    public Pila(int max) {
+        this.max = max;
+        this.vec = new Vector<>();
+    }
 
-    // numelems
-    int size();
+    // Hace falta poner: @Override ?
+    public void push(E e) throws FullStackException {
+        if (vec.size()>=this.max){
+            throw new FullStackException();
+        }
 
+        vec.add(e);
+    }
+
+    public E pop() throws EmptyStackException {
+        if (this.vec.size()==0){
+            throw new EmptyStackException();
+        }
+        return this.vec.remove(this.vec.size()-1);
+    }
+
+    public void mostra() {
+        System.out.println(vec);
+    }
+
+    public int size() {
+
+        return this.vec.size();
+    }
 
 }
